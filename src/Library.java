@@ -177,7 +177,7 @@ public class Library {
                         case 1:
                             String scientific = "", language = "";
 
-                            System.out.println("Choose book type (standard=1, scientific=2, foreign=3): ");
+                            System.out.println("Choose book type (STANDARD=1, SCIENTIFIC=2, FOREIGN=3): ");
                             int bookType = input.nextInt();
                             if (bookType == 2) {
                                 System.out.println("What kind of scientific book are you planning to add? : ");
@@ -203,7 +203,7 @@ public class Library {
                                 Book book = new ScientificBook(name,author,pageNumber,scientific);
                                 books.add(book);
                             } else if(bookType == 3) {
-                                Book book = new ForeignBook(name,author,pageNumber,language);
+                                Book book = new ForeignBook(name,author,pageNumber,LANGUAGE.valueOf(language));
                                 books.add(book);
                             }
                             break;
