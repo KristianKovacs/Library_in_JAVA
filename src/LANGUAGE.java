@@ -1,0 +1,3 @@
+public enum LANGUAGE {
+    ENGLISH, GERMAN, FRENCH, SLOVAK
+}
