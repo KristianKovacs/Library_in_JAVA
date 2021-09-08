@@ -81,10 +81,12 @@ public class Library {
      * @param array list of customers in library
      */
     public static void ListingOfCustomers(Set<Customer> array) {
+        System.out.println("______________________________________");
         System.out.println("Listing of customers: ");
         for (Customer customer : array) {
             System.out.println(customer);
         }
+        System.out.println("______________________________________");
     }
 
     /**
@@ -119,7 +121,7 @@ public class Library {
      * @param array list of all books in library
      * @param element book to remove
      */
-    public static void RemoveBookFromLibrary(List<Book> array, String element) {
+    public static void RemoveBookFromLibrary(List <Book> array, String element) {
         for (Book book : array) {
             if(book.getNameOfTheBook() == element) {
                 array.remove(book);
@@ -140,6 +142,7 @@ public class Library {
         //////////////////////////////////////////////////////
         /////////////////////////////////////////////////////
         // array lists defined:
+        //List<Book> books = new ArrayList<>();
         List<Book> books = new ArrayList<>();
         Set<Customer> customers = new HashSet<Customer>();
         Set<Borrow> borrows = new HashSet<Borrow>();
@@ -166,9 +169,8 @@ public class Library {
                     /* book menu*/
                     System.out.println();
                     System.out.println("> 1. Add a new book to Library");
-                    System.out.println("> 2. Remove a book from Library");
-                    System.out.println("> 3. List all books in Library");
-                    System.out.println("> 4. Go level up");
+                    System.out.println("> 2. List all books in Library");
+                    System.out.println("> 3. Go level up");
                     System.out.println();
                     System.out.print("Choose your option: ");
                     opt = input.nextInt();
@@ -209,12 +211,9 @@ public class Library {
                             break;
 
                         case 2:
-                            System.out.println("Choose name of the book to be removed from list: ");
-                            String bookToRemove = input.next();
-                            RemoveBookFromLibrary(books,bookToRemove);
+                            ListingOfBooks(books);
                             break;
                         case 3:
-                            ListingOfBooks(books);
                             break;
 
 
@@ -266,9 +265,8 @@ public class Library {
                     /* customer menu */
                     System.out.println();
                     System.out.println("> 1. Add a new customer to system");
-                    System.out.println("> 2. Remove a customer from system");
-                    System.out.println("> 3. Listing all customers");
-                    System.out.println("> 4. Go level up");
+                    System.out.println("> 2. Listing all customers");
+                    System.out.println("> 3. Go level up");
                     System.out.println();
                     System.out.print("Choose your option: ");
                     opt = input.nextInt();
@@ -298,7 +296,7 @@ public class Library {
                         customers.add(customer);
 
                     }
-                    if (opt == 3) {
+                    if (opt == 2) {
                         ListingOfCustomers(customers);
                     }
                     break;
